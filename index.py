@@ -19,6 +19,8 @@ def home():
             prompt=question,
             max_tokens=10
         )
-        print(resp["choices"])
-        answer = resp["choices"]
+        if resp["choices"]:
+            answer = resp["choices"][0]["text"]
+        else:
+            answer = "Not found any answer"
     return render_template("index.html", question=question, answer=answer)
