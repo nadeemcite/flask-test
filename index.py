@@ -17,7 +17,7 @@ def home():
         resp = openai.Completion.create(
             engine="text-davinci-001",
             prompt=question,
-            max_tokens=10
+            max_tokens=5
         )
         print(resp["choices"][0])
         if resp["choices"]:
