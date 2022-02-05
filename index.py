@@ -8,8 +8,8 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     question = request.args.get("question")
-    if question:
-        answer = "Answer"
+    if not question:
+        answer = ""
     else:
         try:
             openai.organization = "org-aiO2YqmcjKmGasfKm8oo8GYN"
