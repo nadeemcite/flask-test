@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-
+import os
+import openai
 
 app = Flask(__name__)
 
@@ -10,5 +11,14 @@ def home():
     if question:
         answer = "Answer"
     else:
-        answer = ""
+        openai.organization = "org-aiO2YqmcjKmGasfKm8oo8GYN"
+        openai.api_key = os.getenv("OPENAI_API_KEY")
+        openai.Engine.list()
+        resp = openai.Completion.create(
+            engine="text-davinci-001",
+            prompt=question,
+            max_tokens=10
+        )
+        print(resp["choices"])
+        answer = resp["choices"]
     return render_template("index.html", question=question, answer=answer)
