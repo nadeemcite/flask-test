@@ -19,6 +19,7 @@ def home():
             prompt=question,
             max_tokens=5
         )
+        print(resp["choices"])
         print(resp["choices"][0])
         if resp["choices"]:
             print(resp["choices"][0]["text"])
