@@ -20,6 +20,7 @@ def home():
             max_tokens=10
         )
         if resp["choices"]:
+            print(resp["choices"][0]["text"])
             answer = resp["choices"][0]["text"]
         else:
             answer = "Not found any answer"
