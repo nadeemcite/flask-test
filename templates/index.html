@@ -7,8 +7,12 @@
     <title>Text-Bot</title>
 </head>
 <body>
-
-    <input value="{{ message }}"> <br/>
-    <button>Ask Bot!</button>
+    <form action="/">
+        <input name="question" value="{{ message }}"> <br/>
+        <button>Ask Bot!</button>
+    </form>
+    <p>
+        {{answer}}
+    </p>
 </body>
 </html>
