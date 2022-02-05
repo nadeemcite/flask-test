@@ -10,6 +10,7 @@ def home():
     question = request.args.get("question")
     if not question:
         answer = ""
+        question = ""
     else:
         try:
             openai.organization = "org-aiO2YqmcjKmGasfKm8oo8GYN"
