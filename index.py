@@ -31,5 +31,6 @@ def home():
     return render_template("index.html", question=question, answer=answer)
 
 @app.route("/figlet")
+def figlet_page():
     result = pyfiglet.figlet_format("Test")
     return render_template("figlet.html", result=result)
