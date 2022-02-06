@@ -32,5 +32,8 @@ def home():
 
 @app.route("/figlet")
 def figlet_page():
-    result = pyfiglet.figlet_format("Test")
+    text = request.args.get("question")
+    result = ""
+    if text:
+        result = pyfiglet.figlet_format(text)
     return render_template("figlet.html", result=result)
