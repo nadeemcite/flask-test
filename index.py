@@ -36,4 +36,4 @@ def figlet_page():
     result = ""
     if text:
         result = pyfiglet.figlet_format(text)
-    return render_template("figlet.html", result=result)
+    return render_template("figlet.html", result=result, text=text)
