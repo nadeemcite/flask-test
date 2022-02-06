@@ -32,7 +32,7 @@ def home():
 
 @app.route("/figlet")
 def figlet_page():
-    text = request.args.get("question")
+    text = request.args.get("text")
     result = ""
     if text:
         result = pyfiglet.figlet_format(text)
