@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import os
 import openai
+import pyfiglet
 
 app = Flask(__name__)
 
@@ -28,3 +29,7 @@ def home():
         except Exception as e:
             print(e)
     return render_template("index.html", question=question, answer=answer)
+
+@app.route("/figlet")
+    result = pyfiglet.figlet_format("Test")
+    return render_template("figlet.html", result=result)
